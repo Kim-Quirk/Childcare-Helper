@@ -1,0 +1,11 @@
+// Default variable overrides
+$primary: #900;
+$enable-shadows: true;
+$prefix: "mo-";
+
+$body-bg: #000;
+$body-color: #111;
+
+
+// Then import Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
