@@ -8,7 +8,7 @@ $body-color: #111;
 
 
 // Then import Bootstrap
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import "/css/theme.scss", "../node_modules/bootstrap/scss/bootstrap";
 
 
 
