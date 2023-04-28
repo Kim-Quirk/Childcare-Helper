@@ -1,5 +1,7 @@
 {
-  "dependencies": {
-    "bootstrap": "^5.3.0-alpha3"
-  }
+    "dependencies": {
+        "bootstrap": "^5.3.0-alpha3",
+        "convex": "^0.13.0",
+        "dotenv": "^16.0.3"
+    }
 }
