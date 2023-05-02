@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "convex": "^0.14.0",
-    "dotenv": "^16.0.3",
-    "node": "^20.0.0"
-  }
-}
