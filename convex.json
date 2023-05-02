@@ -1,7 +1,7 @@
 {
-  "project": "childcare-helper",
+  "project": "childcare-help",
   "team": "kim-quirk",
-  "prodUrl": "https://coordinated-meerkat-211.convex.cloud",
+  "prodUrl": "https://disagreeable-monkey-790.convex.cloud",
   "functions": "convex/",
   "authInfo": []
 }

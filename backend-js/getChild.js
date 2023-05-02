@@ -1,4 +1,4 @@
-import { query } from "./_generated/server";
+import { query } from "../convex/_generated/server";
 
 
 console.log("HERE");
