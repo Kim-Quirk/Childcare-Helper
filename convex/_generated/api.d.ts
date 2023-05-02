@@ -10,7 +10,9 @@
  */
 
 import type { ApiFromModules } from "convex/api";
+import type * as connectConvex from "../connectConvex";
 import type * as getChild from "../getChild";
+import type * as getTasks from "../getTasks";
 
 /**
  * A type describing your app's public Convex API.
@@ -22,5 +24,7 @@ import type * as getChild from "../getChild";
  * `ConvexReactClient` to create app-specific types.
  */
 export type API = ApiFromModules<{
+  connectConvex: typeof connectConvex;
   getChild: typeof getChild;
+  getTasks: typeof getTasks;
 }>;

@@ -1,3 +1,34 @@
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+
+// 4. Include any default map overrides here
+
+// 5. Include remainder of required parts
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+// 6. Optionally include any other parts as needed
+@import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/helpers";
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "../node_modules/bootstrap/scss/utilities/api";
+
+
+// 8. Additional custom code here
+
 // Default variable overrides
 $white: #FDFDFDff;
 $off-white: #F2F4F3ff;
@@ -10,10 +41,6 @@ $prefix: "mo-";
 
 $body-bg: #000;
 $body-color: #111;
-
-.navbar-default .navbar-toggle .icon-bar  {
-  background-color: $gray
-}
 
 body {
     font: 400 15px Lato, sans-serif;
@@ -160,6 +187,11 @@ body {
   
   .navbar li a, .navbar .navbar-brand {
     color: $white !important;
+    text-decoration: none;
+  }
+
+  .navbar-default .navbar-toggle .icon-bar  {
+    background-color: $gray
   }
   
   .navbar-nav li a:hover, .navbar-nav li.active a {
@@ -189,6 +221,39 @@ body {
     -webkit-animation-duration: 1s;
     visibility: visible;
   }
+
+  #about {
+    #classes {
+      div {
+        background-color: $primary;
+        margin: 0.5em;
+        padding: 1em;
+        width: 12em;
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  // Overlay effect
+  #overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+    div {
+      background-color: $primary;
+    }
+  }
+
   
   @keyframes slide {
     0% {
@@ -215,12 +280,3 @@ body {
       font-size: 150px;
     }
   }/*# sourceMappingURL=theme.css.map */
-
-
-// Then import Bootstrap
-@import "../node_modules/bootstrap/scss/functions";
-@import "../node_modules/bootstrap/scss/variables";
-@import "../node_modules/bootstrap/scss/mixins";
-
-
-
