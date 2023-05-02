@@ -18,6 +18,6 @@
     "isolatedModules": true,
     "noEmit": true
   },
-  "include": ["./**/*", "../backend-js/script.js"],
+  "include": ["./**/*", "../backend-js/script.js", "../connectConvex.js"],
   "exclude": ["./_generated"]
 }
