@@ -8,10 +8,24 @@
 
   <!-- Any templates go here -->
   <template id="child-square-template">
-    <div class="col" onclick="on()">
-      <img src="../images/profile-placeholder.jpg" alt="placeholder profile picture">
-      <h3>Name</h3>
-    </div>
+      <div class="col">
+        <a id="collpaselink" data-toggle="collapse" href="" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <img src="../images/profile-placeholder.jpg" alt="placeholder profile picture">
+        <br>
+        <br>
+        <h3 id="name"></h3>
+        <span class="collapse" id="">
+        <p>Bathroom Type: <span id="bathroom"></span><br>
+          Birthday: <span id="bday"></span><br>
+          RX: <span id="rx"></span><br>
+          Allergies: <span id="allergies"></span>
+        </p>
+        <h3 id="guardians">Guardian Info</h3>
+        </p>
+      </span>
+      </a>
+      </div>
+    
   </template>
 
   <!-- Bootstrap  CSS-->
@@ -79,7 +93,7 @@
     </div>
   </div>
 
-  <div id="overlay" onclick="off()">
+  <!-- <div id="overlay" onclick="off()">
     <div>
       <img src="../images/profile-placeholder.jpg" alt="placeholder profile picture">
       <div>X</div>
@@ -97,7 +111,7 @@
         johndoe@email.com
       </p>
     </div>
-  </div>
+  </div> -->
 
   <footer class="container-fluid text-center" id="main-footer">
     <!-- The footer is in the partials folder. -->
