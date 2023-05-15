@@ -22,6 +22,7 @@
 @import "../node_modules/bootstrap/scss/containers";
 @import "../node_modules/bootstrap/scss/grid";
 @import "../node_modules/bootstrap/scss/helpers";
+@import "../node_modules/bootstrap/scss/forms";
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "../node_modules/bootstrap/scss/utilities/api";
@@ -244,23 +245,46 @@ body {
     }
   }
 
-  // Overlay effect
-  #overlay {
-    position: fixed; /* Sit on top of the page content */
-    display: none; /* Hidden by default */
-    width: 100%; /* Full width (cover the whole page) */
-    height: 100%; /* Full height (cover the whole page) */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer; /* Add a pointer on hover */
-    div {
-      background-color: $primary;
-    }
+  // Form css
+  .modal-dialog {
+    width: 65rem;
   }
+  .radios {
+  
+  .form-check label {
+    display: block;
+    text-align: center;
+  }
+  .form-check input[type=radio] {
+    background-size: 70%;
+    min-width: 5rem;
+    min-height: 5rem;
+    border-radius: 10px;
+    border: 0px;
+    // margin-left: 0px;
+    margin: 0 2.5rem;
+  }
+
+  .form-check input[type=radio]#food {
+    background-image: url(../images/restaurant.png);
+  }
+
+  .form-check input[type=radio]#bathroom {
+    background-image: url(../images/diaper.png);
+  }
+
+  .form-check input[type=radio]#nap {
+    background-image: url(../images/sleep.png);
+  }
+
+  .form-check input[type=radio]#frown {
+    background-image: url(../images/frown-face.png);
+  }
+
+  .form-check input[type=radio]:checked {
+    background-color: $primary;
+  }
+}
 
   
   @keyframes slide {
