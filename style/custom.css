@@ -7866,8 +7866,8 @@ textarea.form-control-lg {
   }
 }
 body {
-  font: 400 15px Lato, sans-serif;
-  line-height: 1.8;
+  font: 15px Lato, sans-serif;
+  line-height: 1.5;
   color: rgb(45, 45, 45);
   background-color: #fdfdfd;
 }
@@ -8064,6 +8064,27 @@ footer .glyphicon {
 
 .modal-dialog {
   width: 65rem;
+}
+
+.form-floating > .form-control:not(:-moz-placeholder-shown) {
+  padding-top: 3rem;
+  height: calc(4.8rem + var(--bs-border-width) * 2);
+}
+
+.form-floating > .form-control:focus, .form-floating > .form-control:not(:placeholder-shown) {
+  padding-top: 3rem;
+  height: calc(4.8rem + var(--bs-border-width) * 2);
+}
+
+form label {
+  font-weight: 300;
+}
+
+.form-check {
+  line-height: 1.4;
+}
+.form-check .form-check-input {
+  border-color: rgb(99, 99, 99);
 }
 
 .radios .form-check label {
