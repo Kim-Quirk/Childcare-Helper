@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Child Report</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap  CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="../style/custom.css">
+
+    <!-- Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+    <nav class="navbar navbar-default navbar-fixed-top" id="main-header">
+        <!-- The nav bar is in the partials folder. -->
+    </nav>
+    <div class="jumbotron text-center">
+        <h1>File a Report for <span>Name</span></h1>
+    </div>
+
+    <div class="modal-dialog" role="document">
+        <div class="modal-content rounded-4 shadow">
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+                <h2>Report Type</h2>
+            </div>
+
+
+            <div class="modal-body p-5 pt-0">
+                <form class="">
+                    <div class="radios">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="food" id="food" value="food" checked>
+                            <label class="form-check-label" for="food">
+                                Food
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bathroom" id="bathroom" value="bathroom"
+                                checked>
+                            <label class="form-check-label" for="bathroom">
+                                Bathroom
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="nap" id="nap" value="nap" checked>
+                            <label class="form-check-label" for="nap">
+                                Nap
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="frown" id="frown" value="frown" checked>
+                            <label class="form-check-label" for="frown">
+                                Incident
+                            </label>
+                        </div>
+                    </div>
+                    <div id="food-appear">
+                        <hr>
+                        <h3>Food Type</h3>
+                        <div class="form-check custom">
+                            <input class="form-check-input" type="checkbox" value="vegetables" id="vegetables">
+                            <label class="form-check-label" for="vegetables">
+                                Vegetables
+                            </label>
+                        </div>
+                        <div class="form-check custom">
+                            <input class="form-check-input" type="checkbox" value="fruits" id="fruits">
+                            <label class="form-check-label" for="fruits">
+                                Fruits
+                            </label>
+                        </div>
+                        <div class="form-check custom">
+                            <input class="form-check-input" type="checkbox" value="grains" id="grains">
+                            <label class="form-check-label" for="grains">
+                                Grains
+                            </label>
+                        </div>
+                        <div class="form-check custom">
+                            <input class="form-check-input" type="checkbox" value="protein" id="protein">
+                            <label class="form-check-label" for="protein">
+                                Protein
+                            </label>
+                        </div>
+                        <div class="form-check custom">
+                            <input class="form-check-input" type="checkbox" value="dairy" id="dairy">
+                            <label class="form-check-label" for="dairy">
+                                Dairy
+                            </label>
+                        </div>
+                        <hr>
+                        <h3>Number of Servings</h3>
+                        <div class="col-md">
+                            <div class="form-floating">
+                              <input type="number" class="form-control" id="num-servings" placeholder="1" value="num-servings">
+                              <label for="num-servings">Number of Servings</label>
+                            </div>
+                          </div>
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                            <label for="floatingTextarea2">Comments</label>
+                          </div>
+                    </div>
+                    <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Sign up</button>
+                    <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container-fluid text-center" id="main-footer">
+        <!-- The footer is in the partials folder. -->
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links in navbar + footer link
+            $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+
+            $(window).scroll(function () {
+                $(".slideanim").each(function () {
+                    var pos = $(this).offset().top;
+
+                    var winTop = $(window).scrollTop();
+                    if (pos < winTop + 600) {
+                        $(this).addClass("slide");
+                    }
+                });
+            });
+        })
+    </script>
+    <script src="../js/main.js" type="module"></script>
+</body>
+
+</html>

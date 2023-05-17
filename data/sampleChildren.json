@@ -1,0 +1,90 @@
+[{
+    "name": "Johnny Doe",
+    "allergies": ["N/A"],
+    "rx": ["N/A"],
+    "bathroom": "diapers",
+    "birthday": "12/08/2021",
+    "guardians": [
+        {
+            "name": "Jane Doe",
+            "phone": "888-8888-8888",
+            "email": "janedoe@email.com"
+        },
+        {
+            "name": "John Doe",
+            "phone": "888-8888-8888",
+            "email": "johndoe@email.com"
+        }
+    ]
+},
+{
+    "name": "Jane Doe",
+    "allergies": ["N/A"],
+    "rx": ["N/A"],
+    "bathroom": "diapers",
+    "birthday": "12/08/2021",
+    "guardians": [
+        {
+            "name": "Jane Doe",
+            "phone": "888-8888-8888",
+            "email": "janedoe@email.com"
+        },
+        {
+            "name": "John Doe",
+            "phone": "888-8888-8888",
+            "email": "johndoe@email.com"
+        }
+    ]
+},
+{
+    "name": "Joe Bough",
+    "allergies": ["N/A"],
+    "rx": ["N/A"],
+    "bathroom": "diapers",
+    "birthday": "07/12/2020",
+    "guardians": [
+        {
+            "name": "Jane Bough",
+            "phone": "888-8888-8888",
+            "email": "janebough@email.com"
+        },
+        {
+            "name": "Joseph Bough",
+            "phone": "888-8888-8888",
+            "email": "josephbough@email.com"
+        }
+    ]
+},
+{
+    "name": "Kate Smart",
+    "allergies": ["N/A"],
+    "rx": ["N/A"],
+    "bathroom": "diapers",
+    "birthday": "10/25/2021",
+    "guardians": [
+        {
+            "name": "Kamila Smart",
+            "phone": "888-8888-8888",
+            "email": "kamilasmart@email.com"
+        }
+    ]
+},
+{
+    "name": "Alex Dough",
+    "allergies": ["N/A"],
+    "rx": ["N/A"],
+    "bathroom": "diapers",
+    "birthday": "12/08/2021",
+    "guardians": [
+        {
+            "name": "Alexa Dough",
+            "phone": "888-8888-8888",
+            "email": "alexadough@email.com"
+        },
+        {
+            "name": "Alexander Dough",
+            "phone": "888-8888-8888",
+            "email": "alexanderdough@email.com"
+        }
+    ]
+}]

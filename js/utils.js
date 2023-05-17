@@ -1,16 +1,27 @@
+// Turn on overlay
+function on() {
+    document.getElementById("overlay").style.display = "block";
+}
+
+// Turn off overlay
+
+function off() {
+    document.getElementById("overlay").style.display = "none";
+}
+
 // Convert to text
 function convertToText(res) {
     if (res.ok) {
-      return res.text();
+        return res.text();
     } else {
-      throw new Error("Bad Response");
+        throw new Error("Bad Response");
     }
-  }
+}
 
 // load the header and footer
 export async function loadHeaderFooter() {
-    const header = await loadTemplate("./partials/header.html");
-    const footer = await loadTemplate("./partials/footer.html");
+    const header = await loadTemplate("../partials/header.html");
+    const footer = await loadTemplate("../partials/footer.html");
     const headerElement = document.getElementById("main-header");
     const footerElement = document.getElementById("main-footer");
     renderWithTemplate(header, headerElement);
@@ -25,12 +36,12 @@ export async function loadHeaderFooter() {
 //     if (getLocalStorage("verified") === true) {
 //       account.textContent = "Logout";
 //       account.removeAttribute("href", "");
-  
+
 //       var name = document.createElement("li");
 //       var user = getLocalStorage("user");
 //       name.textContent = "Hi " + user.nickname + "!";
 //       name.setAttribute("id", "profileName");
-  
+
 //       var parent = document.querySelector(".nav");
 //       parent.appendChild(name);
 //       account.addEventListener("click", () => {
