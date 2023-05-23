@@ -5,10 +5,6 @@ import { loadHeaderFooter } from "./utils.js";
 
 loadHeaderFooter();
 
-// const dataSource = new ExternalServices();
-
-// console.log(dataSource.getData('sampleChildren.json'));
-
 const modalElement = document.querySelector("#modalElement");
 
 const formReport = new FormReport();
@@ -17,8 +13,9 @@ const formReport = new FormReport();
 document.forms["reportType"].addEventListener("submit", (e) => {
     e.preventDefault();
     // e.target would contain our form in this case
-    FormReport.init();
+    console.log(e.target);
+    formReport.init(modalElement);
   });
 
-FormReport.init(type, modalElement);
+
 

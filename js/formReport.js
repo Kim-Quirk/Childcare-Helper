@@ -3,24 +3,25 @@ import {
   } from "./utils.js";
 
 export default class FormReport {
-    constructor(type) {
-        this.type = type;
+    constructor(modalElement) {
         this.modalElement = modalElement;
+        this.type;
     }
     init() {
         const formElement = document.forms["reportType"];
         const json = formDataToJSON(formElement);
         console.log(json)
+        this.type = json.reportType;
         if (this.type == "bathroom") {
-            bathroomForm();
+            this.bathroomForm();
         } else if (this.type == "food") {
-            foodForm();
+            this.foodForm();
         }
         else if (this.type == "incident") {
-            incidentForm();
+            this.incidentForm();
         }
         else if (this.type == "nap") {
-            napForm();
+            this.napForm();
         }
     }
     bathroomForm() {
