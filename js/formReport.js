@@ -3,8 +3,8 @@ import {
   } from "./utils.js";
 
 export default class FormReport {
-    constructor(modalElement) {
-        this.modalElement = modalElement;
+    constructor(form) {
+        this.form = form;
         this.type;
     }
     init() {
@@ -23,10 +23,21 @@ export default class FormReport {
         else if (this.type == "nap") {
             this.napForm();
         }
+        else if (this.type == "frown") {
+            this.incidentForm();
+        }
+    }
+    save() {
+        const formElement = document.forms["bathroomForm"];
+        console.log(formElement)
+        const json = formDataToJSON(formElement);
+        console.log(json)
     }
     bathroomForm() {
-        form = document.createElement("form");
-        form.innerHtml =
+        var div = document.querySelector("#remove");
+        div.remove();
+        this.form.setAttribute("name", "bathroomForm");
+        this.form.innerHTML =
             `<div id="bathroom-appear">
         <br>
         <h2>Bathroom Information</h2>
@@ -58,10 +69,17 @@ export default class FormReport {
         <br>
     </div>
     <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Submit</button>`
+    document.forms["bathroomForm"].addEventListener("submit", (e) => {
+        e.preventDefault();
+        console.log(e.target);
+        this.save();
+      });
     }
     foodForm() {
-        form = document.createElement("form");
-        form.innerHtml =
+        var div = document.querySelector("#remove");
+        div.remove();
+        this.form.setAttribute("name", "foodForm");
+        this.form.innerHTML =
             `<div id="food-appear">
         <br>
         <h2>Food Information</h2>
@@ -123,8 +141,10 @@ export default class FormReport {
     <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Submit</button>`
     }
     incidentForm() {
-        form = document.createElement("form");
-        form.innerHtml =
+        var div = document.querySelector("#remove");
+        div.remove();
+        this.form.setAttribute("name", "incidentForm");
+        this.form.innerHTML =
             `<div id="incident-appear">
         <br>
         <h2>Incident Information</h2>
@@ -154,8 +174,10 @@ export default class FormReport {
     <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Submit</button>`
     }
     napForm() {
-        form = document.createElement("form");
-        form.innerHtml =
+        var div = document.querySelector("#remove");
+        div.remove();
+        this.form.setAttribute("name", "napForm");
+        this.form.innerHTML =
             `<div id="nap-appear">
         <br>
         <h2>Incident Information</h2>
