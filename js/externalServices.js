@@ -1,5 +1,5 @@
 // testing URL
-const baseURL = "../data/";
+const baseURL = "http://localhost:3000/";
 
 
 // Convert to JSON
@@ -19,6 +19,7 @@ export default class ExternalServices {
     }
     getData(data) {
         // instead we will pass the category we want in here when we need it.
-        return fetch(baseURL + `${data}`).then(convertToJson).then((data) => data.Result);
+        console.log(baseURL + `${data}`)
+        return fetch(baseURL + `${data}`).then(convertToJson);
     }
 }
