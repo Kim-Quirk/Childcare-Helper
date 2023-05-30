@@ -9,7 +9,7 @@ loadHeaderFooter();
 
 const dataSource = new ExternalServices();
 
-// console.log(dataSource.getData('sampleChildren.json'));
+console.log(dataSource.getData('users'));
 
 const listElement = document.querySelector("#classes");
 

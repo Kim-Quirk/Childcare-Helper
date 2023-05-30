@@ -1,97 +1,97 @@
 import { renderListWithTemplate } from "./utils.js";
 
 
-// backup
-const dataBackup = [{
-  "name": "Johnny Doe",
-  "allergies": ["N/A"],
-  "rx": ["N/A"],
-  "bathroom": "diapers",
-  "birthday": "12/08/2021",
-  "guardians": [
-      {
-          "name": "Jane Doe",
-          "phone": "888-8888-8888",
-          "email": "janedoe@email.com"
-      },
-      {
-          "name": "John Doe",
-          "phone": "888-8888-8888",
-          "email": "johndoe@email.com"
-      }
-  ]
-},
-{
-  "name": "Jane Doe",
-  "allergies": ["N/A"],
-  "rx": ["N/A"],
-  "bathroom": "diapers",
-  "birthday": "12/08/2021",
-  "guardians": [
-      {
-          "name": "Jane Doe",
-          "phone": "888-8888-8888",
-          "email": "janedoe@email.com"
-      },
-      {
-          "name": "John Doe",
-          "phone": "888-8888-8888",
-          "email": "johndoe@email.com"
-      }
-  ]
-},
-{
-  "name": "Joe Bough",
-  "allergies": ["N/A"],
-  "rx": ["N/A"],
-  "bathroom": "diapers",
-  "birthday": "07/12/2020",
-  "guardians": [
-      {
-          "name": "Jane Bough",
-          "phone": "888-8888-8888",
-          "email": "janebough@email.com"
-      },
-      {
-          "name": "Joseph Bough",
-          "phone": "888-8888-8888",
-          "email": "josephbough@email.com"
-      }
-  ]
-},
-{
-  "name": "Kate Smart",
-  "allergies": ["N/A"],
-  "rx": ["N/A"],
-  "bathroom": "diapers",
-  "birthday": "10/25/2021",
-  "guardians": [
-      {
-          "name": "Kamila Smart",
-          "phone": "888-8888-8888",
-          "email": "kamilasmart@email.com"
-      }
-  ]
-},
-{
-  "name": "Alex Dough",
-  "allergies": ["N/A"],
-  "rx": ["N/A"],
-  "bathroom": "diapers",
-  "birthday": "12/08/2021",
-  "guardians": [
-      {
-          "name": "Alexa Dough",
-          "phone": "888-8888-8888",
-          "email": "alexadough@email.com"
-      },
-      {
-          "name": "Alexander Dough",
-          "phone": "888-8888-8888",
-          "email": "alexanderdough@email.com"
-      }
-  ]
-}]
+// // backup
+// const dataBackup = [{
+//   "name": "Johnny Doe",
+//   "allergies": ["N/A"],
+//   "rx": ["N/A"],
+//   "bathroom": "diapers",
+//   "birthday": "12/08/2021",
+//   "guardians": [
+//       {
+//           "name": "Jane Doe",
+//           "phone": "888-8888-8888",
+//           "email": "janedoe@email.com"
+//       },
+//       {
+//           "name": "John Doe",
+//           "phone": "888-8888-8888",
+//           "email": "johndoe@email.com"
+//       }
+//   ]
+// },
+// {
+//   "name": "Jane Doe",
+//   "allergies": ["N/A"],
+//   "rx": ["N/A"],
+//   "bathroom": "diapers",
+//   "birthday": "12/08/2021",
+//   "guardians": [
+//       {
+//           "name": "Jane Doe",
+//           "phone": "888-8888-8888",
+//           "email": "janedoe@email.com"
+//       },
+//       {
+//           "name": "John Doe",
+//           "phone": "888-8888-8888",
+//           "email": "johndoe@email.com"
+//       }
+//   ]
+// },
+// {
+//   "name": "Joe Bough",
+//   "allergies": ["N/A"],
+//   "rx": ["N/A"],
+//   "bathroom": "diapers",
+//   "birthday": "07/12/2020",
+//   "guardians": [
+//       {
+//           "name": "Jane Bough",
+//           "phone": "888-8888-8888",
+//           "email": "janebough@email.com"
+//       },
+//       {
+//           "name": "Joseph Bough",
+//           "phone": "888-8888-8888",
+//           "email": "josephbough@email.com"
+//       }
+//   ]
+// },
+// {
+//   "name": "Kate Smart",
+//   "allergies": ["N/A"],
+//   "rx": ["N/A"],
+//   "bathroom": "diapers",
+//   "birthday": "10/25/2021",
+//   "guardians": [
+//       {
+//           "name": "Kamila Smart",
+//           "phone": "888-8888-8888",
+//           "email": "kamilasmart@email.com"
+//       }
+//   ]
+// },
+// {
+//   "name": "Alex Dough",
+//   "allergies": ["N/A"],
+//   "rx": ["N/A"],
+//   "bathroom": "diapers",
+//   "birthday": "12/08/2021",
+//   "guardians": [
+//       {
+//           "name": "Alexa Dough",
+//           "phone": "888-8888-8888",
+//           "email": "alexadough@email.com"
+//       },
+//       {
+//           "name": "Alexander Dough",
+//           "phone": "888-8888-8888",
+//           "email": "alexanderdough@email.com"
+//       }
+//   ]
+// }]
 
 export default class ChildList {
   constructor(data, listElement) {
@@ -100,7 +100,8 @@ export default class ChildList {
   }
   async init() {
     //Get info from API, wait plz
-    const list = await this.data.getData('sampleChildren.json');
+    const list = await this.data.getData('users');
+    console.log(list)
 
     // if (list == undefined) {
     //   this.renderList(dataBackup);
@@ -111,7 +112,7 @@ export default class ChildList {
     //Render children list
     // this.renderList(list);
 
-    this.renderList(dataBackup);
+    this.renderList(list);
 
   }
   prepareTemplate(template, child) {
@@ -119,7 +120,7 @@ export default class ChildList {
     template.querySelector("#name").innerHTML = child.name;
     var uniqueID1 = child.name.split(" ").join("");
     var uniqueID2 = child.birthday.split(" ").join("").split("/").join("");
-    var uniqueID = "#"+ uniqueID1 + uniqueID2;
+    var uniqueID = "#" + uniqueID1 + uniqueID2;
     console.log(uniqueID)
     template.querySelector("#collpaselink").href = uniqueID;
     template.querySelector(".collapse").id = uniqueID;
@@ -133,7 +134,7 @@ export default class ChildList {
       para.innerHTML = `<b>${guardian.name}</b><br>${guardian.phone}<br>${guardian.email}`
       template.querySelector(".collapse").append(para)
     });
-    
+
     return template;
   }
   renderList(list) {
