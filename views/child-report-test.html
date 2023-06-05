@@ -35,40 +35,6 @@
             <div id="modalElement" class="modal-body p-5 pt-0">
                 <form id="formOne" name="reportType">
                     <br>
-                    <h2>Report Type</h2>
-                    <div class="form-row align-items-center radios">
-                        <div class="form-check form-check-inline col-auto">
-                            <input class="form-check-input" type="radio" name="reportType" id="food" value="food">
-                            <label class="form-check-label" for="food">
-                                Food
-                            </label>
-                        </div>
-                        <div class="form-check form-check-inline col-auto">
-                            <input class="form-check-input" type="radio" name="reportType" id="bathroom"
-                                value="bathroom">
-                            <label class="form-check-label" for="bathroom">
-                                Bathroom
-                            </label>
-                        </div>
-                        <div class="form-check form-check-inline col-auto">
-                            <input class="form-check-input" type="radio" name="reportType" id="nap" value="nap">
-                            <label class="form-check-label" for="nap">
-                                Nap
-                            </label>
-                        </div>
-                        <div class="form-check form-check-inline col-auto">
-                            <input class="form-check-input" type="radio" name="reportType" id="frown" value="frown">
-                            <label class="form-check-label" for="frown">
-                                Incident
-                            </label>
-                        </div>
-                    </div>
-                    <br>
-                    <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Confirm &
-                        Continue</button>
-                </form>
-                <form class="d-none" id="foodForm" name="foodForm">
-                    <br>
                     <h2>Food Information</h2>
                     <div>
                         <input type="time" name="time" class="form-control form-control-lg" />
@@ -77,48 +43,48 @@
                     <br>
                     <br>
                     <p>Select Food Type(s):</p>
-                    <div class="form-check custom">
-                        <input class="form-check-input" name="vegetables" type="checkbox" value="true" id="true">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="vegetables" value="true" id="vegetables">
                         <label class="form-check-label" for="vegetables">
                             Vegetables
                         </label>
                     </div>
-                    <div class="form-check custom">
-                        <input class="form-check-input" name="fruits" type="checkbox" value="true" id="fruits">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="fruits" value="fruits" id="fruits">
                         <label class="form-check-label" for="fruits">
                             Fruits
                         </label>
                     </div>
-                    <div class="form-check custom">
-                        <input class="form-check-input" name="grains" type="checkbox" value="true" id="grains">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="grains" value="grains" id="grains">
                         <label class="form-check-label" for="grains">
                             Grains
                         </label>
                     </div>
-                    <div class="form-check custom">
-                        <input class="form-check-input" name="protein" type="checkbox" value="true" id="protein">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="protein" value="protein" id="protein">
                         <label class="form-check-label" for="protein">
                             Protein
                         </label>
                     </div>
-                    <div class="form-check custom">
-                        <input class="form-check-input" name="dairy" type="checkbox" value="true" id="dairy">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="dairy" value="dairy" id="dairy">
                         <label class="form-check-label" for="dairy">
                             Dairy
                         </label>
                     </div>
                     <br>
                     <div class="form-floating">
-                        <input type="number" class="form-control" name="servings" id="servings" placeholder="1">
+                        <input type="number" class="form-control" id="servings" name="servings" placeholder="1">
                         <label for="servings">Number of Servings</label>
                     </div>
                     <small class="text-body-secondary">How many servings total did they eat?</small>
                     <br>
                     <br>
                     <div class="form-floating">
-                        <textarea class="form-control" name="comments" placeholder="Leave a comment here" id="comments"
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" name="comments"
                             style="height: 100px"></textarea>
-                        <label for="comments">Comments</label>
+                        <label for="floatingTextarea2">Comments</label>
                     </div>
                     <small class="text-body-secondary">Any additional comments?</small>
                     <br>
@@ -126,32 +92,35 @@
 
                     <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Submit</button>
                 </form>
+                <form class="d-none" id="foodForm" name="foodForm">
+                    
+                </form>
                 <form class="d-none" id="bathroomForm" name="bathroomForm">
                     <br>
                     <h2>Bathroom Information</h2>
                     <div>
-                        <input type="time" name="time" class="form-control form-control-lg" />
+                        <input type="time" class="form-control form-control-lg" />
                     </div>
                     <small class="text-body-secondary">When did they go to the bathroom?</small>
                     <br>
                     <br>
-                    <select class="form-select form-select-lg mb-3" name="bathroomType" aria-label=".form-select-lg example">
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                         <option disabled selected>Select Potty Training Status</option>
-                        <option value="diapers">No Potty Trained / Diapers</option>
-                        <option value="pullUps">Currently Potty Training / Pull-ups</option>
-                        <option value="underwear">Potty Training / Underwear</option>
+                        <option value="1">No Potty Trained / Diapers</option>
+                        <option value="2">Currently Potty Training / Pull-ups</option>
+                        <option value="3">Potty Training / Underwear</option>
                     </select>
                     <br>
                     <div class="form-check form-switch">
-                        <input class="form-check-input" name="accident" type="checkbox" role="switch" id="accident">
+                        <input class="form-check-input" type="checkbox" role="switch" id="accident">
                         <label class="form-check-label" for="accident">Select this if the child had an
                             accident.</label>
                     </div>
                     <br>
                     <div class="form-floating">
-                        <textarea class="form-control" name="comments" placeholder="Leave a comment here" id="comments"
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
                             style="height: 100px"></textarea>
-                        <label for="comments">Comments</label>
+                        <label for="floatingTextarea2">Comments</label>
                     </div>
                     <small class="text-body-secondary">Any additional comments?</small>
                     <br>
@@ -163,22 +132,22 @@
                     <br>
                     <h2>Nap Information</h2>
                     <div>
-                        <input type="time" name="time" class="form-control form-control-lg" />
+                        <input type="time" class="form-control form-control-lg" />
                     </div>
                     <small class="text-body-secondary">When did the nap time start?</small>
                     <br>
                     <br>
                     <div class="form-floating">
-                        <input type="number" name="length" class="form-control" id="length" placeholder="1">
+                        <input type="number" class="form-control" id="length" placeholder="1">
                         <label for="length">Nap length, in minutes</label>
                     </div>
                     <small class="text-body-secondary">How long did they sleep (in minutes)?</small>
                     <br>
                     <br>
                     <div class="form-floating">
-                        <textarea class="form-control" name="comments" placeholder="Leave a comment here" id="comments"
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
                             style="height: 100px"></textarea>
-                        <label for="comments">Comments</label>
+                        <label for="floatingTextarea2">Comments</label>
                     </div>
                     <small class="text-body-secondary">Any additional comments?</small>
                     <br>
@@ -191,12 +160,12 @@
                     <br>
                     <h2>Incident Information</h2>
                     <div>
-                        <input type="time" name="time" class="form-control form-control-lg" />
+                        <input type="time" class="form-control form-control-lg" />
                     </div>
                     <small class="text-body-secondary">When did this incident occur?</small>
                     <br>
                     <br>
-                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="incidentType">
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                         <option disabled selected>Select Incident Type</option>
                         <option value="accident">Potty Accident</option>
                         <option value="misbehavior">Misbehavior</option>
@@ -205,9 +174,9 @@
                     </select>
                     <br>
                     <div class="form-floating">
-                        <textarea class="form-control" name="comments" placeholder="Leave a comment here" id="comments"
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
                             style="height: 100px"></textarea>
-                        <label for="comments">Additional Report Information</label>
+                        <label for="floatingTextarea2">Additional Report Information</label>
                     </div>
                     <small class="text-body-secondary">Please fill out a small report here with details about this
                         incident.</small>

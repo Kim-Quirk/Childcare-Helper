@@ -10,6 +10,7 @@ export default class FormReport {
     init() {
         const formElement = document.forms["reportType"];
         const json = formDataToJSON(formElement);
+        console.log("Converted to json result: ", json)
         this.type = json.reportType;
         if (this.type == "bathroom") {
             this.bathroomForm();
