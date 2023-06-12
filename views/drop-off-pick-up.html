@@ -32,7 +32,7 @@
     <div class="modal-content rounded-4 shadow">
       <div id="modalElement" class="modal-body p-5 pt-0">
         <br>
-        <form name="dropOffOrPickUp" class="block">
+        <form name="dropOffOrPickUp" id="dropOffOrPickUp" class="">
           <h2>Pick-up or Drop-off?</h2>
           <div class="form-check">
             <input class="form-check-input" type="radio" name="pickup" id="pickup" value="true">
@@ -75,12 +75,12 @@
             </div>
           </div>
           <hr>
-          <span id="pickUpOnly" class="d-none">
+        </span>
+        <form class="pick-up d-none" id="guardianFormPickUp" name="guardianFormPickUp">
+          <span id="pickUpOnly">
             <h2>Daily Summary of Events</h2>
             <hr>
           </span>
-        </span>
-        <form class="pick-up d-none" id="guardianFormPickUp" name="guardianFormPickUp">
           <h2>Guardian Pick-up Consent Form</h2>
           <div class="form-check custom">
             <input class="form-check-input" name="verify" type="checkbox" value="true" id="true">

@@ -25,5 +25,20 @@ document.forms["dropOffOrPickUp"].addEventListener("submit", (e) => {
 
 document.forms["guardianFormPickUp"].addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log("guardianFormPickUp")
+  formAttendance.progress();
+});
+
+document.forms["workerFormPickUp"].addEventListener("submit", (e) => {
+  e.preventDefault();
+  formAttendance.finish();
+});
+
+document.forms["guardianFormDropOff"].addEventListener("submit", (e) => {
+  e.preventDefault();
+  window.location.href="./finished.html";
+})
+
+document.forms["workerFormDropOff"].addEventListener("submit", (e) => {
+  e.preventDefault();
+  window.location.href="./finished.html";
 });

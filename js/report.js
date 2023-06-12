@@ -22,22 +22,26 @@ document.forms["foodForm"].addEventListener("submit", (e) => {
   e.preventDefault();
   console.log("Saving????")
   formReport.save(document.forms["foodForm"]);
+  window.location.href="./finished.html";
 });
 
 document.forms["bathroomForm"].addEventListener("submit", (e) => {
   e.preventDefault();
   console.log("Saving????")
   formReport.save(e.target);
+  window.location.href="./finished.html";
 });
 
 document.forms["napForm"].addEventListener("submit", (e) => {
   e.preventDefault();
   console.log("Saving????")
   formReport.save(e.target);
+  window.location.href="./finished.html";
 });
 
 document.forms["incidentForm"].addEventListener("submit", (e) => {
   e.preventDefault();
   console.log("Saving????")
   formReport.save(e.target);
+  window.location.href="./finished.html";
 });
