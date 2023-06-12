@@ -32,14 +32,14 @@
     <div class="modal-content rounded-4 shadow">
       <div id="modalElement" class="modal-body p-5 pt-0">
         <br>
-        <form>
+        <form name="dropOffOrPickUp" class="block">
           <h2>Pick-up or Drop-off?</h2>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="pickup" id="pickup" value="pickup">
+            <input class="form-check-input" type="radio" name="pickup" id="pickup" value="true">
             <label class="form-check-label" for="pickup">Picking Up</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="dropoff" id="dropoff" value="dropoff">
+            <input class="form-check-input" type="radio" name="dropoff" id="dropoff" value="true">
             <label class="form-check-label" for="dropoff">Dropping Off</label>
           </div>
           <br>
@@ -80,7 +80,7 @@
             <hr>
           </span>
         </span>
-        <form class="pick-up d-none" id="guardianForm" name="guardianFormPickUp">
+        <form class="pick-up d-none" id="guardianFormPickUp" name="guardianFormPickUp">
           <h2>Guardian Pick-up Consent Form</h2>
           <div class="form-check custom">
             <input class="form-check-input" name="verify" type="checkbox" value="true" id="true">
@@ -90,7 +90,7 @@
           </div>
           <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Submit & Continue</button>
         </form>
-        <form class="drop-off d-none" id="guardianForm" name="guardianFormDropOff">
+        <form class="drop-off d-none" id="guardianFormDropOff" name="guardianFormDropOff">
           <h2>Guardian Drop-off Consent Form</h2>
           <div class="form-check custom">
             <input class="form-check-input" name="certify" type="checkbox" value="true" id="true">
@@ -107,7 +107,7 @@
           <br>
           <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Submit & Continue</button>
         </form>
-        <form class="d-none drop-off" id="workerForm" name="workerFormDropOff">
+        <form class="d-none drop-off" id="workerFormDropOff" name="workerFormDropOff">
           <br>
           <h2>Daycare Worker Form</h2>
           <div class="form-check custom">
@@ -135,7 +135,7 @@
           </span>
           <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Submit</button>
         </form>
-        <form class="pick-up d-none" id="workerForm" name="workerFormPickUp">
+        <form class="pick-up d-none" id="workerFormPickUp" name="workerFormPickUp">
           <br>
           <h2>Daycare Worker Form</h2>
           <div class="form-check custom">
@@ -206,7 +206,7 @@
       });
     })
   </script>
-  <script src="../js/main.js" type="module"></script>
+  <script src="../js/attendance.js" type="module"></script>
 </body>
 
 </html>
