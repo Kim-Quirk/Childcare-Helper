@@ -72,8 +72,11 @@ body {
   .jumbotron {
     background-color: $primary;
     color: $white;
-    padding: 100px 25px;
+    padding: 50px 25px;
     font-family: Montserrat, sans-serif;
+    img {
+      max-width: 800px;
+    }
   }
   
   .container-fluid {
@@ -194,6 +197,14 @@ body {
     text-decoration: none;
   }
 
+  a.navbar-brand {
+    padding: 7.25px 0;
+    img {
+      max-width: 35px;
+      padding: 0;
+    }
+  }
+
   .navbar-default .navbar-toggle .icon-bar  {
     background-color: $gray
   }
@@ -224,6 +235,10 @@ body {
     animation-duration: 1s;
     -webkit-animation-duration: 1s;
     visibility: visible;
+  }
+
+  #childPlaceholder {
+    max-width: 100%;
   }
 
   #about {

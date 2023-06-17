@@ -7891,8 +7891,11 @@ h4, .h4 {
 .jumbotron {
   background-color: #22aa85;
   color: #fdfdfd;
-  padding: 100px 25px;
+  padding: 50px 25px;
   font-family: Montserrat, sans-serif;
+}
+.jumbotron img {
+  max-width: 800px;
 }
 
 .container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
@@ -8013,6 +8016,14 @@ h4, .h4 {
   text-decoration: none;
 }
 
+a.navbar-brand {
+  padding: 7.25px 0;
+}
+a.navbar-brand img {
+  max-width: 35px;
+  padding: 0;
+}
+
 .navbar-default .navbar-toggle .icon-bar {
   background-color: rgb(99, 99, 99);
 }
@@ -8043,6 +8054,10 @@ footer .glyphicon {
   animation-duration: 1s;
   -webkit-animation-duration: 1s;
   visibility: visible;
+}
+
+#childPlaceholder {
+  max-width: 100%;
 }
 
 #about #classes div {

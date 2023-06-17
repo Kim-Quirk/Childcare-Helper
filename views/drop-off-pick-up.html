@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap  CSS-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="../style/custom.css">
+
+  <!-- Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+  <nav class="navbar navbar-default navbar-fixed-top" id="main-header">
+    <!-- The nav bar is in the partials folder. -->
+  </nav>
+  <div class="jumbotron text-center">
+    <img src="../images/logo.PNG" alt="Childcare Helper Logo">
+  </div>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content rounded-4 shadow">
+      <div id="modalElement" class="modal-body p-5 pt-0">
+        <br>
+        <form name="dropOffOrPickUp" id="dropOffOrPickUp" class="">
+          <h2>Pick-up or Drop-off?</h2>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="pickup" id="pickup" value="true">
+            <label class="form-check-label" for="pickup">Picking Up</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="dropoff" id="dropoff" value="true">
+            <label class="form-check-label" for="dropoff">Dropping Off</label>
+          </div>
+          <br>
+          <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Confirm &
+            Continue</button>
+        </form>
+        <span id="childInfoDisplay" class="d-none">
+          <h2 id="childInfo">Drop Off for Name</h2>
+          <div class="container col-auto">
+            <div class="row justify-content-md-center">
+              <div class=" col-sm-4">
+                <img src="../images/profile-placeholder.jpg" alt="placeholder profile picture" id="childPlaceholder">
+              </div>
+              <div class="col-sm">
+                <h3>Children's Info</h3>
+                <p>Child Name</p>
+                <p>Bathroom Status: Unknown</p>
+                <p>Birthday: 88/88/8888</p>
+                <p>RX Info:</p>
+                <ul>
+                  <li>Medicine</li>
+                </ul>
+                <p>Allergy Info:</p>
+                <ul>
+                  <li>Allergy</li>
+                  <li>Allergy</li>
+                </ul>
+                <hr>
+                <h3>Guardian's Info</h3>
+                <p>Jane Doe</p>
+                <p>777-777-7777</p>
+              </div>
+            </div>
+          </div>
+          <hr>
+        </span>
+        <form class="pick-up d-none" id="guardianFormPickUp" name="guardianFormPickUp">
+          <span id="pickUpOnly">
+            <h2>Daily Summary of Events</h2>
+            <hr>
+          </span>
+          <h2>Guardian Pick-up Consent Form</h2>
+          <div class="form-check custom">
+            <input class="form-check-input" name="verify" type="checkbox" value="true" id="true">
+            <label class="form-check-label" for="verify">
+              I verify I have seen and read the above report information.
+            </label>
+          </div>
+          <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Submit & Continue</button>
+        </form>
+        <form class="drop-off d-none" id="guardianFormDropOff" name="guardianFormDropOff">
+          <h2>Guardian Drop-off Consent Form</h2>
+          <div class="form-check custom">
+            <input class="form-check-input" name="certify" type="checkbox" value="true" id="true">
+            <label class="form-check-label" for="certify">
+              I certify the above information is correct.
+            </label>
+          </div>
+          <div class="form-check custom">
+            <input class="form-check-input" name="liability" type="checkbox" value="true" id="true">
+            <label class="form-check-label" for="liability">
+              I understand the daycare is not responsible for any lost, damaged, or stolen items.
+            </label>
+          </div>
+          <br>
+          <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Submit & Continue</button>
+        </form>
+        <form class="d-none drop-off" id="workerFormDropOff" name="workerFormDropOff">
+          <br>
+          <h2>Daycare Worker Form</h2>
+          <div class="form-check custom">
+            <input class="form-check-input" name="items" type="checkbox" value="true" id="true">
+            <label class="form-check-label" for="item">
+              The child was dropped off with items.
+            </label>
+          </div>
+          <span id="withItems" class="d-none">
+            <div class="form-floating">
+              <input type="number" name="num-items" class="form-control" id="num-items" placeholder="1">
+              <label for="num-items">Enter a number</label>
+            </div>
+            <small class="text-body-secondary">How many items were they dropped off with</small>
+            <br>
+            <br>
+            <div class="form-floating">
+              <textarea class="form-control" name="description" placeholder="Leave a comment here" id="description"
+                style="height: 100px"></textarea>
+              <label for="description">Description</label>
+            </div>
+            <small class="text-body-secondary">Describe the items.</small>
+            <br>
+            <br>
+          </span>
+          <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Submit</button>
+        </form>
+        <form class="pick-up d-none" id="workerFormPickUp" name="workerFormPickUp">
+          <br>
+          <h2>Daycare Worker Form</h2>
+          <div class="form-check custom">
+            <input class="form-check-input" name="workerVerify" type="checkbox" value="true" id="workerVerify">
+            <label class="form-check-label" for="workerVerify">
+              The child is being picked up by an authorized pick-up person.
+            </label>
+          </div>
+          <div class="form-check custom">
+            <input class="form-check-input" name="itemsVerify" type="checkbox" value="true" id="itemsVerify">
+            <label class="form-check-label" for="itemsVerify">
+              The child's item(s) have been located and are being sent home with them.
+            </label>
+          </div>
+          <br>
+          <p>The child was dropped off with the following items:</p>
+          <ul>
+            <li>Item</li>
+            <li>Item</li>
+          </ul>
+          <small class="text-body-secondary">Item description</small>
+          <br>
+          <br>
+          <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Submit</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="container-fluid text-center" id="main-footer">
+    <!-- The footer is in the partials folder. -->
+  </footer>
+
+  <script>
+    $(document).ready(function () {
+      // Add smooth scrolling to all links in navbar + footer link
+      $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function () {
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+
+      $(window).scroll(function () {
+        $(".slideanim").each(function () {
+          var pos = $(this).offset().top;
+
+          var winTop = $(window).scrollTop();
+          if (pos < winTop + 600) {
+            $(this).addClass("slide");
+          }
+        });
+      });
+    })
+  </script>
+  <script src="../js/attendance.js" type="module"></script>
+</body>
+
+</html>
