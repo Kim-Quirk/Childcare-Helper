@@ -1,5 +1,5 @@
 
-// import ExternalServices from "./externalServices.js";
+import ExternalServices from "./externalServices.js";
 import FormReport from "./formReport.js";
 import { loadHeaderFooter } from "./utils.js";
 
@@ -7,15 +7,24 @@ loadHeaderFooter();
 
 const form = document.querySelector("#form");
 
-const formReport = new FormReport(form);
+const dataSource = new ExternalServices();
+
+const formReport = new FormReport(dataSource);
+formReport.init();
 
 
-// this is how it would look if we listen for the submit on the form
+document.forms["childSelect"].addEventListener("submit", (e) => {
+  e.preventDefault();
+  // e.target would contain our form in this case
+  console.log("Form type results", e.target);
+  formReport.childSelect(document.forms["childSelect"]);
+});
+
 document.forms["reportType"].addEventListener("submit", (e) => {
   e.preventDefault();
   // e.target would contain our form in this case
   console.log("Form type results", e.target);
-  formReport.init();
+  formReport.progress(document.forms["reportType"]);
 });
 
 document.forms["foodForm"].addEventListener("submit", (e) => {

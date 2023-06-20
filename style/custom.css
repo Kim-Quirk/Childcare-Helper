@@ -8130,6 +8130,10 @@ form label {
   background-color: #22aa85;
 }
 
+#specialPadding {
+  padding-left: 0;
+}
+
 @keyframes slide {
   0% {
     opacity: 0;

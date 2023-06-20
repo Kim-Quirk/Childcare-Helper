@@ -28,11 +28,20 @@
   <div class="jumbotron text-center">
     <img src="../images/logo.PNG" alt="Childcare Helper Logo">
   </div>
+  <h1 class="text-center">This Report is for <span id="reportTitle">...</span></h1>
   <div class="modal-dialog" role="document">
     <div class="modal-content rounded-4 shadow">
       <div id="modalElement" class="modal-body p-5 pt-0">
         <br>
-        <form name="dropOffOrPickUp" id="dropOffOrPickUp" class="">
+        <form name="childSelect" id="childSelect" class="">
+          <h2>Select a Child</h2>
+          <div id="specialPadding" class="form-check">
+          </div>
+          <br>
+          <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Confirm &
+            Continue</button>
+        </form>
+        <form name="dropOffOrPickUp" id="dropOffOrPickUp" class="d-none">
           <h2>Pick-up or Drop-off?</h2>
           <div class="form-check">
             <input class="form-check-input" type="radio" name="pickup" id="pickup" value="true">
@@ -47,30 +56,21 @@
             Continue</button>
         </form>
         <span id="childInfoDisplay" class="d-none">
-          <h2 id="childInfo">Drop Off for Name</h2>
+          <h2 id="childInfo"><span id="reportType"></span> for <span id="childsName"></span></h2>
           <div class="container col-auto">
             <div class="row justify-content-md-center">
               <div class=" col-sm-4">
                 <img src="../images/profile-placeholder.jpg" alt="placeholder profile picture" id="childPlaceholder">
               </div>
-              <div class="col-sm">
-                <h3>Children's Info</h3>
-                <p>Child Name</p>
-                <p>Bathroom Status: Unknown</p>
-                <p>Birthday: 88/88/8888</p>
-                <p>RX Info:</p>
-                <ul>
-                  <li>Medicine</li>
-                </ul>
-                <p>Allergy Info:</p>
-                <ul>
-                  <li>Allergy</li>
-                  <li>Allergy</li>
-                </ul>
+              <div id="childsInfo" class="col-sm">
+                <h3>Child's Info</h3>
+                <p id="name">Child Name</p>
+                <p>Bathroom Status: <span id="bathroom">Unknown</span></p>
+                <p>Birthday: <span id="bday">88/88/8888</span></p>
+                <p>RX Info: <span id="rx"></span></p>
+                <p>Allergy Info: <span id="allergies"></span></p>
                 <hr>
                 <h3>Guardian's Info</h3>
-                <p>Jane Doe</p>
-                <p>777-777-7777</p>
               </div>
             </div>
           </div>

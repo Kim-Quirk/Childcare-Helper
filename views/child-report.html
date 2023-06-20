@@ -29,12 +29,22 @@
         <img src="../images/logo.PNG" alt="Childcare Helper Logo">
     </div>
 
+    <h1 class="text-center">This Report is for <span id="reportTitle">...</span></h1>
+
     <div class="modal-dialog" role="document">
         <div class="modal-content rounded-4 shadow">
 
             <div id="modalElement" class="modal-body p-5 pt-0">
-                <form id="formOne" name="reportType">
+                <br>
+                <form name="childSelect" id="childSelect" class="">
+                    <h2>Select a Child</h2>
+                    <div id="specialPadding" class="form-check">
+                    </div>
                     <br>
+                    <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Confirm &
+                      Continue</button>
+                  </form>
+                <form id="formOne" name="reportType" class="d-none">
                     <h2>Report Type</h2>
                     <div class="form-row align-items-center radios">
                         <div class="form-check form-check-inline col-auto">
