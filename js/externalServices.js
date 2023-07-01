@@ -22,4 +22,17 @@ export default class ExternalServices {
         console.log(baseURL + `${data}`)
         return fetch(baseURL + `${data}`).then(convertToJson);
     }
+    async saveData(data, info) {
+        const options = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(info),
+        };
+        const response = await fetch(baseURL + `${data}`, options).then(
+            convertToJson
+        );
+        console.log(response);
+    }
 }
