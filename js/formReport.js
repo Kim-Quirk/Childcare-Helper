@@ -11,7 +11,10 @@ export default class FormReport {
         this.childrenList;
     }
     async init() {
-        const list = await this.data.getData('users');
+        try { const list = await this.data.getData('users'); }
+        catch (err) {
+            console.log(err);
+        }
         this.childrenList = list;
         var select = document.createElement("select")
         select.setAttribute("name", "childName");
@@ -56,6 +59,7 @@ export default class FormReport {
     }
     save(formElement) {
         console.log("In the save function!", formElement)
+        console.log("Save to this child:", this.childInfo)
         const json = formDataToJSON(formElement);
         console.log(json);
     }

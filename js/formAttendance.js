@@ -71,6 +71,7 @@ export default class FormAttendance {
     }
     save(formElement) {
         console.log("In the save function!", formElement)
+        console.log("Save to this child:", this.childInfo)
         const json = formDataToJSON(formElement);
         console.log(json);
     }
