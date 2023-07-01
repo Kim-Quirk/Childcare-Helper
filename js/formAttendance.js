@@ -11,7 +11,7 @@ export default class FormAttendance {
         this.childInfo;
     }
     async init() {
-        const list = await this.data.getData('users');
+        const list = await this.data.getData('children');
         this.childrenList = list;
         // console.log(list)
         var select = document.createElement("select")

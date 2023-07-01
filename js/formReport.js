@@ -11,10 +11,9 @@ export default class FormReport {
         this.childrenList;
     }
     async init() {
-        try { const list = await this.data.getData('users'); }
-        catch (err) {
-            console.log(err);
-        }
+        const list = await this.data.getData('children'); 
+        console.log(this.data)
+        console.log(list)
         this.childrenList = list;
         var select = document.createElement("select")
         select.setAttribute("name", "childName");
@@ -29,6 +28,7 @@ export default class FormReport {
         console.log(json.childName)
         document.querySelector("#reportTitle").innerHTML = json.childName;
         this.childInfo = this.childrenList.filter(child => child.name === json.childName);
+        console.log(this.childInfo[0]._id)
         this.toggleVisibility("childSelect")
         this.toggleVisibility("formOne")
     }
@@ -61,7 +61,11 @@ export default class FormReport {
         console.log("In the save function!", formElement)
         console.log("Save to this child:", this.childInfo)
         const json = formDataToJSON(formElement);
-        console.log(json);
+        let report = {
+            "child_id": this.childInfo[0]._id,
+            "report": json
+        }
+        this.data.saveData("add_report", report)
     }
     bathroomForm() {
         var formOne = document.querySelector("#formOne");

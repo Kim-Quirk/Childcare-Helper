@@ -38,7 +38,7 @@ document.forms["bathroomForm"].addEventListener("submit", (e) => {
   e.preventDefault();
   console.log("Saving????")
   formReport.save(e.target);
-  window.location.href="./finished.html";
+  // window.location.href="./finished.html";
 });
 
 document.forms["napForm"].addEventListener("submit", (e) => {
