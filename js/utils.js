@@ -29,6 +29,10 @@ export async function loadHeaderFooter() {
     // updatedHeader();
 }
 
+export function capitlizeFirstLetter(word) {
+   return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
 // export function updatedHeader() {
 //     // console.log(document.querySelector("#login"));
 //     var account = document.querySelector("#login");
@@ -52,22 +56,22 @@ export async function loadHeaderFooter() {
 //     }
 //   }
 
-// retrieve data from localstoragef
-export function getLocalStorage(key) {
-    return JSON.parse(localStorage.getItem(key));
-}
+// // retrieve data from localstoragef
+// export function getLocalStorage(key) {
+//     return JSON.parse(localStorage.getItem(key));
+// }
 
-// save data to local storage
-export function setLocalStorage(key, data) {
-    localStorage.setItem(key, JSON.stringify(data));
-}
+// // save data to local storage
+// export function setLocalStorage(key, data) {
+//     localStorage.setItem(key, JSON.stringify(data));
+// }
 
-export function getParam(param) {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const urlItem = urlParams.get(param);
-    return urlItem;
-}
+// export function getParam(param) {
+//     const queryString = window.location.search;
+//     const urlParams = new URLSearchParams(queryString);
+//     const urlItem = urlParams.get(param);
+//     return urlItem;
+// }
 
 //Load a list with template
 export function renderListWithTemplate(

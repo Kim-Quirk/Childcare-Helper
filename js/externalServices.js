@@ -17,10 +17,23 @@ export default class ExternalServices {
     constructor(data) {
         this.data = data;
     }
-    getData(data) {
-        // instead we will pass the category we want in here when we need it.
-        console.log(baseURL + `${data}`)
-        return fetch(baseURL + `${data}`).then(convertToJson);
+    async getData(data, info = "N/A") {
+        if (info !== "N/A") {
+            console.log("Not NA! Info,", info);
+            const options = {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "child_id": info
+                }
+            };
+            return fetch(baseURL + `${data}`, options).then(
+                convertToJson
+            );
+        } else {
+            return fetch(baseURL + `${data}`).then(convertToJson);
+        }
+        
     }
     async saveData(data, info) {
         const options = {
