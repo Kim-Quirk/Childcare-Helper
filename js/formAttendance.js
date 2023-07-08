@@ -15,7 +15,6 @@ export default class FormAttendance {
     async init() {
         const list = await this.data.getData('children');
         this.childrenList = list;
-        // console.log(list)
         var select = document.createElement("select")
         select.setAttribute("name", "childName");
         select.setAttribute("class", "form-control form-control-lg");
@@ -26,7 +25,6 @@ export default class FormAttendance {
     }
     async childSelected(formElement) {
         const json = formDataToJSON(formElement);
-        console.log(json.childName)
 
         document.querySelector("#reportTitle").innerHTML = json.childName;
         document.querySelector("#childsName").innerHTML = json.childName;
@@ -34,12 +32,8 @@ export default class FormAttendance {
         this.toggleVisibility("childSelect");
         this.toggleVisibility("dropOffOrPickUp");
         this.childInfo = this.childrenList.filter(child => child.name === json.childName);
-        // console.log(this.childInfo);
-
-        // console.log(this.childInfo[0]._id)
 
         this.reports = await this.data.getData('find_report', this.childInfo[0]._id)
-        // console.log("Reports", this.reports)
 
         document.querySelector("#name").innerHTML = this.childInfo[0].name;
         document.querySelector("#rx").innerHTML = this.childInfo[0].rx;
@@ -49,7 +43,6 @@ export default class FormAttendance {
         document.querySelector("#bday").innerHTML = date.toLocaleString('en-GB', { timeZone: 'UTC' }).split(',')[0];
         var para = document.createElement("p");
         this.childInfo[0].guardians.forEach(guardian => {
-            // console.log(guardian);
             if (para.innerHTML) {
                 para.innerHTML = para.innerHTML + `<br/><b>${guardian.name}</b><br>${guardian.phone}<br>${guardian.email}`
             } else {
@@ -68,7 +61,7 @@ export default class FormAttendance {
 
             var span = document.querySelector("#dailySummary");
             this.reports.forEach(item => {
-                span.innerHTML += `<h3>Report One</h3><ul>`
+                span.innerHTML += `<h3>Report</h3><ul>`
                 for (let key in item.report) {
                     var title = capitlizeFirstLetter(key);
                     var result = capitlizeFirstLetter(item.report[key])
@@ -85,19 +78,24 @@ export default class FormAttendance {
             document.querySelector("#reportType").innerHTML = "Drop-off";
 
         }
-        console.log("form element", formElement)
         this.toggleVisibility("dropOffOrPickUp");
         this.toggleVisibility("childInfoDisplay");
     }
-    save(formElement) {
-        console.log("In the save function!", formElement)
-        console.log("Save to this child:", this.childInfo)
-        const json = formDataToJSON(formElement);
-        console.log(json);
+    checkItems(formElement) {
+        const json = formDataToJSON(formElement)
+        if (json.items === "true") {
+            this.toggleVisibility("withItems");
+            this.toggleVisibility("workerFormDropOff");
+        }
+        else {
+            this.finish();
+        }
+    }
+    finish() {
+        window.location.href="./finished.html";
     }
     toggleVisibility(elementID) {
         var element = document.getElementById(elementID);
-        console.log(elementID, element);
         element.classList.toggle("d-none");
     }
     progress() {

@@ -42,10 +42,15 @@ document.forms["workerFormPickUp"].addEventListener("submit", (e) => {
 
 document.forms["guardianFormDropOff"].addEventListener("submit", (e) => {
   e.preventDefault();
-  window.location.href="./finished.html";
+  formAttendance.progress();
 })
 
 document.forms["workerFormDropOff"].addEventListener("submit", (e) => {
   e.preventDefault();
-  window.location.href="./finished.html";
+  formAttendance.checkItems(e.target);
+});
+
+document.forms["withItems"].addEventListener("submit", (e) => {
+  e.preventDefault();
+  formAttendance.finish();
 });

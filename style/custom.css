@@ -7928,7 +7928,8 @@ h4, .h4 {
   margin-bottom: 10px;
 }
 
-.carousel-control.right, .carousel-control.left {
+.carousel-control.right,
+.carousel-control.left {
   background-image: none;
   color: #22aa85;
 }
@@ -7999,6 +8000,29 @@ h4, .h4 {
   color: #fdfdfd;
 }
 
+a.div-button {
+  text-decoration: none;
+}
+a.div-button p {
+  color: rgb(45, 45, 45);
+}
+
+a.div-button:hover {
+  color: #8ac276;
+}
+a.div-button:hover p, a.div-button:hover h4, a.div-button:hover .h4, a.div-button:hover span {
+  color: #8ac276;
+}
+a.div-button:hover div {
+  background-color: rgba(138, 194, 118, 0.151);
+  z-index: 2;
+}
+
+.button-box {
+  padding: 1rem;
+  background-color: #fdfdfd;
+}
+
 .navbar {
   margin-bottom: 0;
   background-color: #22aa85;
@@ -8011,7 +8035,8 @@ h4, .h4 {
   font-family: Montserrat, sans-serif;
 }
 
-.navbar li a, .navbar .navbar-brand {
+.navbar li a,
+.navbar .navbar-brand {
   color: #fdfdfd !important;
   text-decoration: none;
 }
@@ -8028,7 +8053,8 @@ a.navbar-brand img {
   background-color: rgb(99, 99, 99);
 }
 
-.navbar-nav li a:hover, .navbar-nav li.active a {
+.navbar-nav li a:hover,
+.navbar-nav li.active a {
   color: #22aa85 !important;
   background-color: #fdfdfd !important;
 }
@@ -8086,7 +8112,8 @@ footer .glyphicon {
   height: calc(4.8rem + var(--bs-border-width) * 2);
 }
 
-.form-floating > .form-control:focus, .form-floating > .form-control:not(:placeholder-shown) {
+.form-floating > .form-control:focus,
+.form-floating > .form-control:not(:placeholder-shown) {
   padding-top: 3rem;
   height: calc(4.8rem + var(--bs-border-width) * 2);
 }
@@ -8158,4 +8185,5 @@ form label {
   .logo {
     font-size: 150px;
   }
-} /*# sourceMappingURL=custom.css.map */
+}
+/*# sourceMappingURL=custom.css.map */
