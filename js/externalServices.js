@@ -1,6 +1,10 @@
-// testing URL
-const baseURL = "http://localhost:3000/";
+/*
+    This file is our external services. It handles requests to APIs, such as our backend.
+    It returns the results of these requests to our front-end.
+*/
 
+// Initilize our base url
+const baseURL = "http://localhost:3000/";
 
 // Convert to JSON
 async function convertToJson(res) {
@@ -17,11 +21,25 @@ export default class ExternalServices {
     constructor(data) {
         this.data = data;
     }
-    getData(data) {
-        // instead we will pass the category we want in here when we need it.
-        console.log(baseURL + `${data}`)
-        return fetch(baseURL + `${data}`).then(convertToJson);
+    // Request information from the backend
+    async getData(data, info = "N/A") {
+        if (info !== "N/A") {
+            const options = {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "child_id": info
+                }
+            };
+            return fetch(baseURL + `${data}`, options).then(
+                convertToJson
+            );
+        } else {
+            return fetch(baseURL + `${data}`).then(convertToJson);
+        }
+        
     }
+    // Send information to be saved to the database
     async saveData(data, info) {
         const options = {
             method: "POST",

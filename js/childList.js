@@ -1,18 +1,25 @@
+/*
+This file creates our child list class. It handles the whole children's profile generation process.
+*/
+
+// Import what we need
 import { renderListWithTemplate } from "./utils.js";
 
 export default class ChildList {
+  // Construct and initilize our variables
   constructor(data, listElement) {
     this.data = data;
     this.listElement = listElement;
   }
+  // initlize our child list
   async init() {
-    //Get info from API, wait plz
+    //Wait for children's info from backend
     const list = await this.data.getData('users');
-    console.log(list)
 
+    // Render our list of children
     this.renderList(list);
-
   }
+  // Prepares our template (tells our information where to go in the template)
   prepareTemplate(template, child) {
     template.querySelector("#name").innerHTML = child.name;
     template.querySelector("#rx").innerHTML = child.rx;
@@ -22,7 +29,6 @@ export default class ChildList {
     template.querySelector("#bday").innerHTML = date.toLocaleString('en-GB', { timeZone: 'UTC' }).split(',')[0];
     var para = document.createElement("p");
     child.guardians.forEach(guardian => {
-      // console.log(guardian);
       if (para.innerHTML) {
         para.innerHTML = para.innerHTML + `<br/><b>${guardian.name}</b><br>${guardian.phone}<br>${guardian.email}`
       } else {
@@ -33,6 +39,7 @@ export default class ChildList {
     template.querySelector(".col").append(para);
     return template;
   }
+  // Renders our list of children
   renderList(list) {
     // make sure the list is empty
     this.listElement.innerHTML = "";
@@ -42,7 +49,7 @@ export default class ChildList {
       template,
       this.listElement,
       list,
-      this.prepareTemplate
+      this.prepareTemplate // Prepare our template
     );
   }
 }

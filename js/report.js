@@ -1,56 +1,55 @@
+/*
+This is the report file. It listens for submit buttons then calls on appropriate functions to make the next calculations.
+*/
 
+// Import everything we need
 import ExternalServices from "./externalServices.js";
 import FormReport from "./formReport.js";
 import { loadHeaderFooter } from "./utils.js";
 
+// Load the html pages header and fotter
 loadHeaderFooter();
 
-const form = document.querySelector("#form");
-
+// Make an external services connection (connect to backend and the database via the backend)
 const dataSource = new ExternalServices();
 
+// Create a new form report instance and initilize it
 const formReport = new FormReport(dataSource);
 formReport.init();
 
 
+// Listen for the form's submit button...
 document.forms["childSelect"].addEventListener("submit", (e) => {
   e.preventDefault();
-  // e.target would contain our form in this case
-  console.log("Form type results", e.target);
-  formReport.childSelect(document.forms["childSelect"]);
+  formReport.childSelect(e.target); // Call on the correct formreport's function
 });
 
+// Listen for the form's submit button...
 document.forms["reportType"].addEventListener("submit", (e) => {
   e.preventDefault();
-  // e.target would contain our form in this case
-  console.log("Form type results", e.target);
-  formReport.progress(document.forms["reportType"]);
+  formReport.progress(e.target); // Call on the correct formreport's function
 });
 
+// Listen for the form's submit button...
 document.forms["foodForm"].addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log("Saving????")
-  formReport.save(document.forms["foodForm"]);
-  window.location.href="./finished.html";
+  formReport.save(e.target); // Call on the correct formreport's function
 });
 
+// Listen for the form's submit button...
 document.forms["bathroomForm"].addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log("Saving????")
-  formReport.save(e.target);
-  // window.location.href="./finished.html";
+  formReport.save(e.target) // Call on the correct formreport's function
 });
 
+// Listen for the form's submit button...
 document.forms["napForm"].addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log("Saving????")
-  formReport.save(e.target);
-  window.location.href="./finished.html";
+  formReport.save(e.target) // Call on the correct formreport's function
 });
 
+// Listen for the form's submit button...
 document.forms["incidentForm"].addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log("Saving????")
-  formReport.save(e.target);
-  window.location.href="./finished.html";
+  formReport.save(e.target); // Call on the correct formreport's function
 });

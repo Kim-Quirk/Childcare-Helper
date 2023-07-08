@@ -1,13 +1,6 @@
-// Turn on overlay
-function on() {
-    document.getElementById("overlay").style.display = "block";
-}
-
-// Turn off overlay
-
-function off() {
-    document.getElementById("overlay").style.display = "none";
-}
+/*
+This is the utility file. Utility functions are stored here. These are functions that are used repeatedly or help simplify code in other portions of this project.
+*/
 
 // Convert to text
 function convertToText(res) {
@@ -29,44 +22,9 @@ export async function loadHeaderFooter() {
     // updatedHeader();
 }
 
-// export function updatedHeader() {
-//     // console.log(document.querySelector("#login"));
-//     var account = document.querySelector("#login");
-//     // console.log(account);
-//     if (getLocalStorage("verified") === true) {
-//       account.textContent = "Logout";
-//       account.removeAttribute("href", "");
-
-//       var name = document.createElement("li");
-//       var user = getLocalStorage("user");
-//       name.textContent = "Hi " + user.nickname + "!";
-//       name.setAttribute("id", "profileName");
-
-//       var parent = document.querySelector(".nav");
-//       parent.appendChild(name);
-//       account.addEventListener("click", () => {
-//         setLocalStorage("user", undefined);
-//         setLocalStorage("verified", false);
-//         location.reload();
-//       });
-//     }
-//   }
-
-// retrieve data from localstoragef
-export function getLocalStorage(key) {
-    return JSON.parse(localStorage.getItem(key));
-}
-
-// save data to local storage
-export function setLocalStorage(key, data) {
-    localStorage.setItem(key, JSON.stringify(data));
-}
-
-export function getParam(param) {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const urlItem = urlParams.get(param);
-    return urlItem;
+// Captilize the first letter of a word
+export function capitlizeFirstLetter(word) {
+   return word.charAt(0).toUpperCase() + word.slice(1);
 }
 
 //Load a list with template
@@ -109,6 +67,5 @@ export function formDataToJSON(formElement) {
     formData.forEach(function (value, key) {
       convertedJSON[key] = value;
     });
-    console.log("In the form data to JSON function", convertedJSON)
     return convertedJSON;
   }

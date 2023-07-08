@@ -77,9 +77,8 @@
           <hr>
         </span>
         <form class="pick-up d-none" id="guardianFormPickUp" name="guardianFormPickUp">
-          <span id="pickUpOnly">
+          <span id="dailySummary">
             <h2>Daily Summary of Events</h2>
-            <hr>
           </span>
           <h2>Guardian Pick-up Consent Form</h2>
           <div class="form-check custom">
@@ -108,15 +107,26 @@
           <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Submit & Continue</button>
         </form>
         <form class="d-none drop-off" id="workerFormDropOff" name="workerFormDropOff">
-          <br>
           <h2>Daycare Worker Form</h2>
           <div class="form-check custom">
             <input class="form-check-input" name="items" type="checkbox" value="true" id="true">
-            <label class="form-check-label" for="item">
-              The child was dropped off with items.
+            <label class="form-check-label" for="items">
+              The child was dropped off with item(s).
             </label>
           </div>
-          <span id="withItems" class="d-none">
+          <br>
+          <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Submit</button>
+        </form>
+        <span id="withItems" class="d-none">
+          <form class="drop-off" id="withItems" name="withItems">
+            <h2>Daycare Worker Form</h2>
+          <div class="form-check custom">
+            <input checked class="form-check-input" name="items" type="checkbox" value="true" id="true">
+            <label class="form-check-label" for="items">
+              The child was dropped off with item(s).
+            </label>
+          </div>
+          <br>
             <div class="form-floating">
               <input type="number" name="num-items" class="form-control" id="num-items" placeholder="1">
               <label for="num-items">Enter a number</label>
@@ -132,9 +142,9 @@
             <small class="text-body-secondary">Describe the items.</small>
             <br>
             <br>
-          </span>
-          <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Submit</button>
-        </form>
+            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Submit</button>
+          </form>
+        </span>
         <form class="pick-up d-none" id="workerFormPickUp" name="workerFormPickUp">
           <br>
           <h2>Daycare Worker Form</h2>
@@ -166,7 +176,7 @@
     </div>
   </div>
 
-  <footer class="container-fluid text-center" id="main-footer">
+  <footer class="container-fluid text-center bg-grey" id="main-footer">
     <!-- The footer is in the partials folder. -->
   </footer>
 

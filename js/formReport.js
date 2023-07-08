@@ -1,8 +1,15 @@
+/*
+    This file creates a FormReport class.
+    A new report can be created and all functions associated with a report are stored here.
+*/
+
+// Import what we need
 import {
     formDataToJSON
   } from "./utils.js";
 
 export default class FormReport {
+    // Construct and initilize our variables
     constructor(data) {
         this.data = data;
         this.type;
@@ -10,38 +17,49 @@ export default class FormReport {
         this.childName;
         this.childrenList;
     }
+    // Initlize our report
     async init() {
+        // Calls to external services to get our list of children from our database
         const list = await this.data.getData('children'); 
-        console.log(this.data)
-        console.log(list)
         this.childrenList = list;
+
+        // Create a select element so our user can select which child they are creating this report for.
         var select = document.createElement("select")
-        select.setAttribute("name", "childName");
+        select.setAttribute("name", "childName"); // Setting up the select element..
         select.setAttribute("class", "form-control form-control-lg");
         list.forEach(child => {
-            select.innerHTML += `<option>${child.name}</option>`
+            select.innerHTML += `<option>${child.name}</option>` //Make each child's name an option for the user...
         });
-        document.querySelector("#specialPadding").append(select);
+        document.querySelector("#specialPadding").append(select); //Add it to our page for the user to see.
     }
+    // A child has been selected for the report.
     childSelect(formElement) {
-        const json = formDataToJSON(formElement);
-        console.log(json.childName)
+        // Grab the form information
+        const json = formDataToJSON(formElement); 
+
+        // Update the report's title at the top of the page...
         document.querySelector("#reportTitle").innerHTML = json.childName;
+
+        // Filter through our list of children for the name the user selected. Save this specific child's information for later use.
         this.childInfo = this.childrenList.filter(child => child.name === json.childName);
-        console.log(this.childInfo[0]._id)
+
+        // Toggles visiblty of items on the page for the user can proceed through the report.
         this.toggleVisibility("childSelect")
         this.toggleVisibility("formOne")
     }
+    // Toggles visiblty of items via ID on the page for the user can proceed through the report.
     toggleVisibility(elementID) {
         var element = document.getElementById(elementID);
-        console.log(elementID, element);
         element.classList.toggle("d-none");
     }
+    // Progress through the report, making items visible as needed
     progress() {
+        // Collects what report the user selected they'd like to fill out...
         const formElement = document.forms["reportType"];
         const json = formDataToJSON(formElement);
-        console.log("Converted to json result: ", json)
         this.type = json.reportType;
+
+        // Toggles the visibility of the correct form type the user indicated
         if (this.type == "bathroom") {
             this.bathroomForm();
         } else if (this.type == "food") {
@@ -57,38 +75,34 @@ export default class FormReport {
             this.incidentForm();
         }
     }
+    // Handles the bathroom specific report
+    bathroomForm() {
+        toggleVisibility("#formOne");
+        toggleVisibility("#bathroomForm");
+    }
+    // Handles the food specific report
+    foodForm() {
+        toggleVisibility("#formOne");
+        toggleVisibility("#foodForm");
+    }
+    // Handles the incident specific report
+    incidentForm() {
+        toggleVisibility("#formOne");
+        toggleVisibility("#incidentForm");
+    }
+    // Handles the nap time specific report
+    napForm() {
+        toggleVisibility("#formOne");
+        toggleVisibility("#napForm");
+    }
+    // Saves the final report to our database
     save(formElement) {
-        console.log("In the save function!", formElement)
-        console.log("Save to this child:", this.childInfo)
         const json = formDataToJSON(formElement);
         let report = {
             "child_id": this.childInfo[0]._id,
             "report": json
         }
         this.data.saveData("add_report", report)
-    }
-    bathroomForm() {
-        var formOne = document.querySelector("#formOne");
-        formOne.classList.add("d-none");
-        var formTwo = document.querySelector("#bathroomForm");
-        formTwo.classList.remove("d-none");
-    }
-    foodForm() {
-        var formOne = document.querySelector("#formOne");
-        formOne.classList.add("d-none");
-        var formTwo = document.querySelector("#foodForm");
-        formTwo.classList.remove("d-none");
-    }
-    incidentForm() {
-        var formOne = document.querySelector("#formOne");
-        formOne.classList.add("d-none");
-        var formTwo = document.querySelector("#incidentForm");
-        formTwo.classList.remove("d-none");
-    }
-    napForm() {
-        var formOne = document.querySelector("#formOne");
-        formOne.classList.add("d-none");
-        var formTwo = document.querySelector("#napForm");
-        formTwo.classList.remove("d-none");
+        window.location.href="./finished.html"; //Moves user to a finished page
     }
 }
