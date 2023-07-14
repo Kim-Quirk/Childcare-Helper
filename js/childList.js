@@ -14,7 +14,7 @@ export default class ChildList {
   // initlize our child list
   async init() {
     //Wait for children's info from backend
-    const list = await this.data.getData('users');
+    const list = await this.data.getData('children');
 
     // Render our list of children
     this.renderList(list);

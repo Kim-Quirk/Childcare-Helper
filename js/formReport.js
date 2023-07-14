@@ -77,23 +77,23 @@ export default class FormReport {
     }
     // Handles the bathroom specific report
     bathroomForm() {
-        toggleVisibility("#formOne");
-        toggleVisibility("#bathroomForm");
+        this.toggleVisibility("formOne");
+        this.toggleVisibility("bathroomForm");
     }
     // Handles the food specific report
     foodForm() {
-        toggleVisibility("#formOne");
-        toggleVisibility("#foodForm");
+        this.toggleVisibility("formOne");
+        this.toggleVisibility("foodForm");
     }
     // Handles the incident specific report
     incidentForm() {
-        toggleVisibility("#formOne");
-        toggleVisibility("#incidentForm");
+        this.toggleVisibility("formOne");
+        this.toggleVisibility("incidentForm");
     }
     // Handles the nap time specific report
     napForm() {
-        toggleVisibility("#formOne");
-        toggleVisibility("#napForm");
+        this.toggleVisibility("formOne");
+        this.toggleVisibility("napForm");
     }
     // Saves the final report to our database
     save(formElement) {
